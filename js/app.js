@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
 	
+	
 	// when new game is clicked
 	$("a.new").click(function(){
 		alert();
@@ -18,14 +19,17 @@ $(document).ready(function(){
 		var user_choice = document.getElementById('userGuess')
 		var user_choice_val = user_choice.value;
 		var user_choice_num = Number(user_choice_val);
+		
 
-		if (user_choice_num < 0 || user_choice_num > 100) {
+		if ((user_choice_num < 0 || user_choice_num > 100) || (!$.trim($('#userGuess').val()))){
 			alert("Please enter an number between 0 and 100");
 		}
 		else {
 			$('<li>').appendTo("#guessList").html(user_choice_num);
 			document.getElementById('userGuess').value = '';
-			console.log(user_choice_num);
+			var counter = $("#count")
+			counter.html( parseInt(counter.html()) + 1 )
+
 			//add number to li guess list
 		};
 
@@ -48,3 +52,4 @@ $(document).ready(function(){
 });
 
 
+				
