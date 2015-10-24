@@ -6,7 +6,7 @@ $(document).ready(function(){
 	console.log(randomNum);
 	// when new game is clicked
 	$("a.new").click(function(){
-		alert();
+		
 
 		
 		// set guesses = 0
@@ -54,6 +54,8 @@ $(document).ready(function(){
 			$('#feedback').html('Super Hot');
 			// print "Hot as the Sun Hot" 
 		}
+		else if (finale_value === 0)
+			$('#feedback').html('THATS THE NUMBER!!')
 	};
 	});
 
